@@ -1,0 +1,30 @@
+﻿@page
+@model Project_Prn221_Shop.Pages.Admin.Categories.AddOrEditModel
+@{
+    ViewData["Title"] = "Add or Edit Category";
+}
+
+<div class="card w-50" style="margin:auto">
+    <div class="card-header bg-success text-white" style="font-weight:bold;">
+        <i class="bi bi-plus-square"></i> New Category
+    </div>
+    <form method="post">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Categ.Name" class="form-label"></label>
+                <input asp-for="Categ.Name" class="form-control" />
+                <span asp-validation-for="Categ.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-circle"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
